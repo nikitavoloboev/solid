@@ -1,11 +1,16 @@
 import { createSignal } from "solid-js"
 
-function Comp(props: any) {
+function Comp(props: { count: number }) {
   return () => {
     const { count } = props
     if (count > 5) return <div>Large count</div>
     return <div>{count}</div>
   }
+}
+
+// optimized version of Comp above
+function BetterComp(props: any) {
+  return <div>{props.count > 5 ? "Large count" : props.count}</div>
 }
 
 export default function RouteComponent() {
