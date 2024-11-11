@@ -17,6 +17,7 @@ export default function RouteComponent() {
   const [count, setCount] = createSignal(0)
   return (
     <>
+      {/* @ts-expect-error */}
       <Comp count={count()} />
       <button onClick={() => setCount((c) => c + 1)}>+</button>
     </>
